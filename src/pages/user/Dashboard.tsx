@@ -34,6 +34,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Bell, Home, LogOut, Settings, User } from "lucide-react";
+import { Header } from "@/components/layout/Header";
 
 const profileSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -122,11 +123,14 @@ export default function UserDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
+    <div className="min-h-screen bg-background">
+      {/* Header with ThemeSwitcher */}
+      <Header title="User Dashboard" userType="user" />
+
+      {/* Original Header */}
+      <header className="bg-card shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">User Dashboard</h1>
+          <h1 className="text-2xl font-bold text-foreground">User Dashboard</h1>
           <div className="flex items-center space-x-4">
             <Button
               variant="ghost"

@@ -33,6 +33,7 @@ import {
 } from "@/components/ui/form";
 import UserManagement from "@/components/admin/UserManagement";
 import { LogOut, Settings, Users, Home, Bell, User, Lock } from "lucide-react";
+import { Header } from "@/components/layout/Header";
 
 const passwordSchema = z
   .object({
@@ -98,11 +99,16 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
+    <div className="min-h-screen bg-background">
+      {/* Header with ThemeSwitcher */}
+      <Header title="Admin Dashboard" userType="admin" />
+
+      {/* Original Header */}
+      <header className="bg-card shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
+          <h1 className="text-2xl font-bold text-foreground">
+            Admin Dashboard
+          </h1>
           <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
