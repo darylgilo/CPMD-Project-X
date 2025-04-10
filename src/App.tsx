@@ -8,6 +8,8 @@ import { ThemeProvider } from "./lib/theme";
 const Login = lazy(() => import("./pages/auth/Login"));
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
 const UserDashboard = lazy(() => import("./pages/user/Dashboard"));
+const AdminWriteUps = lazy(() => import("./pages/admin/WriteUps"));
+const UserWriteUps = lazy(() => import("./pages/user/WriteUps"));
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <Route path="/auth/login" element={<Login />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/user/dashboard" element={<UserDashboard />} />
+            <Route path="/admin/writeups" element={<AdminWriteUps />} />
+            <Route path="/user/writeups" element={<UserWriteUps />} />
 
             {/* Add this before the catchall route */}
             {import.meta.env.VITE_TEMPO === "true" && (

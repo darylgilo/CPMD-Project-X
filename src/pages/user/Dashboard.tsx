@@ -33,7 +33,7 @@ import {
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Bell, Home, LogOut, Settings, User } from "lucide-react";
+import { Bell, Home, LogOut, Settings, User, FileText } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 
 const profileSchema = z.object({
@@ -210,6 +210,14 @@ export default function UserDashboard() {
                         {notifications.filter((n) => !n.read).length}
                       </span>
                     )}
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="justify-start"
+                    onClick={() => navigate("/user/writeups")}
+                  >
+                    <FileText className="h-5 w-5 mr-2" />
+                    Documentation
                   </Button>
                 </div>
               </CardContent>

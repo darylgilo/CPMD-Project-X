@@ -32,7 +32,16 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import UserManagement from "@/components/admin/UserManagement";
-import { LogOut, Settings, Users, Home, Bell, User, Lock } from "lucide-react";
+import {
+  LogOut,
+  Settings,
+  Users,
+  Home,
+  Bell,
+  User,
+  Lock,
+  FileText,
+} from "lucide-react";
 import { Header } from "@/components/layout/Header";
 
 const passwordSchema = z
@@ -165,6 +174,14 @@ export default function AdminDashboard() {
                   >
                     <Lock className="h-5 w-5 mr-2" />
                     Security
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="justify-start"
+                    onClick={() => navigate("/admin/writeups")}
+                  >
+                    <FileText className="h-5 w-5 mr-2" />
+                    Documentation
                   </Button>
                 </div>
               </CardContent>
